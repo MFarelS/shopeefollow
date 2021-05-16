@@ -95,13 +95,19 @@ def objhook(objtype: type, data: dict, recursive_class_hook: bool = True, type_c
                     setattr(output, key, data_value)
                 elif value_type == Class and recursive_class_hook:
                     value: Class
-                    setattr(output, key, objhook(value.type_, data[data_key], recursive_class_hook, type_check,
-                                                 str_hook))
+                    if data_value is not None:
+                        setattr(output, key, objhook(value.type_, data[data_key], recursive_class_hook, type_check,
+                                                     str_hook))
+                    else:
+                        setattr(output, key, None)
                 elif value_type == List:
                     value: List
-                    setattr(output, key, [])
-                    for item in data_value:
-                        getattr(output, key).append(objhook(value.type_, item, recursive_class_hook, type_check,
-                                                            str_hook))
+                    if data_value is not None:
+                        setattr(output, key, [])
+                        for item in data_value:
+                            getattr(output, key).append(objhook(value.type_, item, recursive_class_hook, type_check,
+                                                                str_hook))
+                    else:
+                        setattr(output, key, None)
 
     return output
