@@ -11,15 +11,19 @@ pkg install python
 ```
 Pastikan versi Python 3.8 ke atas, silahkan cek dengan perintah `python --version`
 # Cara Penggunaan
-Pertama, Clone repo ini
+Install, modul `requests`, `colorama` dan `bs4` dengan perintah berikut
+```
+pip install requests colorama bs4
+```
+Setelah itu, Clone repo ini
 ```
 git clone https://github.com/bro-11/shopeefollow
 ```
-Kedua, login dengan cara menjalankan script `login.py`
+Lalu login dengan cara menjalankan script `login.py`
 ```
 python login.py
 ```
-Setelah berhasil, informasi login akan disimpan di file `cookie`, jadi tidak perlu repot" login setiap kali mau pakai.
+Jika berhasil, informasi login akan disimpan di file `cookie`, jadi tidak perlu repot" login setiap kali mau pakai.
 
 Sekarang jalankan botnya
 ```
