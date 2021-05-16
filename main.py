@@ -4,6 +4,7 @@ import config
 from colorama import Fore, init
 import re
 import os
+import pickle
 
 
 # attention: bad code!
@@ -91,9 +92,9 @@ def get_targets() -> list:
 
 
 check_config()
-with open("cookie.txt", 'r') as f:
+with open("cookie", 'rb') as f:
     print(INFO, "Mengambil informasi user...", end="\r")
-    u: user.User = user.User.login(f.read())
+    u: user.User = user.User.login(pickle.load(f))
 
 exclude = set([x.shopid for x in followbot.FollowBot.get_shop_following(u.shopid)])
 def work(shopids_or_usernames: list, depth: int = 1):  # no idea for a name

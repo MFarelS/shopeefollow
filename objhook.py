@@ -50,17 +50,14 @@ def hookable(class_: type):
     return class_
 
 
-def hook_by_name(class_: type):
+def by_name(class_: type):
     """
     :param class_: the class
     :return: the same class with the attribute assigned the key by name
     """
     for key, value in class_.__annotations__.items():
-        if not isinstance(value, Base) and type(value) == type:
-            if value.__module__ == "builtins":
-                class_.__annotations__[key] = Typed(value, key)
-            else:
-                class_.__annotations__[key] = Class(value, key)
+        if not isinstance(value, Base) and type(value) == type and value.__module__ == "builtins":
+            class_.__annotations__[key] = Typed(value, key)
         elif value in (None, ...):
             class_.__annotations__[key] = key
 

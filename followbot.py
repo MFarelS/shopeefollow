@@ -1,7 +1,6 @@
 from typing import Final, Union
 import user
 import requests
-from http.cookies import SimpleCookie
 from typing import List
 from shopdata import Shop
 from objhook import objhook
@@ -76,11 +75,7 @@ class FollowBot:
     def __init__(self, u: user.User):
         self.u = u
         self.session = requests.Session()
-
-        with open("cookie.txt", 'r') as f:
-            cookie = SimpleCookie(f.read())
-            self.session.cookies = requests.sessions.RequestsCookieJar()
-            self.session.cookies.update(cookie)
+        self.session.cookies.update(self.u.cookie)
 
     def __default_headers(self) -> dict:
         return {
