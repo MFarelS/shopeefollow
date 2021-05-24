@@ -1,10 +1,12 @@
 # Bahan-Bahan (PC/Laptop)
 - Python 3.8.x
 - Kopi :D
+- 
 Download Python di https://www.python.org/downloads/
 # Bahan-Bahan (Android)
 - Termux
 - Python 3.8.x
+
 Download Termux di playstore, lalu install Python dengan perintah berikut:
 ```
 pkg install python
