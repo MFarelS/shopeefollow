@@ -38,4 +38,4 @@ python unfollow.py
 ```
 Warning: scirpt ini akan meng-unfollow semua orang yang anda ikuti
 # Tutorials
-Cara mendapatkan 100k followers dengan script ini: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+Cara mendapatkan 100k followers dengan script ini: <br>[Klik Di Sini](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
